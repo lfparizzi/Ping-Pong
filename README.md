@@ -9,4 +9,5 @@ Enjoy.
   
 ### ✍ What did I learn from this project?
   - Html basics
-  - Javascript basics
+  - JavaScript basics
+  - Functions and variables
