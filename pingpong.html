@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ping Pong</title>
+    </head>
+
+    <body>
+        <!--cria o canvas e uma id pra ele-->
+        <canvas id="folha" width="600" height="500"></canvas>
+
+        <script>
+            //document.getElementById puxa o canvas e o getContext puxa o contexto
+            var folhaDesenho = document.getElementById("folha");
+            var areaDesenho = folhaDesenho.getContext("2d");
+
+            var larguraCampo = 600;
+            var alturaCampo = 500;
+            var larguraLinha = 5;
+            var alturaLinha = alturaCampo;
+            var larguraBola = 5;
+            var alturaRaquete = 50; // dificuldade
+            var larguraRaquete = 10;
+
+            var posicaoBolaX = 150;
+            var posicaoBolaY = 150;
+
+            //campo
+            areaDesenho.fillStyle = '#286047';
+            areaDesenho.fillRect(0,0,larguraCampo,alturaCampo);
+
+            //linha
+            areaDesenho.fillStyle = '#FFFFFF';
+            areaDesenho.fillRect(larguraCampo/2 - larguraLinha/2,0,larguraLinha,alturaLinha);
+            //raquete 1
+            areaDesenho.fillRect(0,alturaCampo/2 - alturaRaquete/2,larguraRaquete,alturaRaquete);
+            //raquete 2
+            areaDesenho.fillRect(larguraCampo-larguraRaquete,alturaCampo/2 - alturaRaquete/2,larguraRaquete,alturaRaquete);
+            //bola
+            areaDesenho.fillRect(posicaoBolaX,posicaoBolaY,larguraBola,larguraBola);
+        </script>
+
+
+
+    </body>
+</html>
