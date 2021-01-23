@@ -11,37 +11,48 @@
         <canvas id="folha" width="600" height="500"></canvas>
 
         <script>
-            //document.getElementById puxa o canvas e o getContext puxa o contexto
-            var folhaDesenho = document.getElementById("folha");
-            var areaDesenho = folhaDesenho.getContext("2d");
 
-            var larguraCampo = 600;
-            var alturaCampo = 500;
-            var larguraLinha = 5;
-            var alturaLinha = alturaCampo;
-            var larguraBola = 5;
-            var alturaRaquete = 50; // dificuldade
-            var larguraRaquete = 10;
+            window.onload = function() {
+                setInterval(executar, 1000/80);
+            }
 
-            var posicaoBolaX = 150;
-            var posicaoBolaY = 150;
+            var posicaoBolaX = posicaoBolaY = 25;
 
-            //campo
-            areaDesenho.fillStyle = '#286047';
-            areaDesenho.fillRect(0,0,larguraCampo,alturaCampo);
 
-            //linha
-            areaDesenho.fillStyle = '#FFFFFF';
-            areaDesenho.fillRect(larguraCampo/2 - larguraLinha/2,0,larguraLinha,alturaLinha);
-            //raquete 1
-            areaDesenho.fillRect(0,alturaCampo/2 - alturaRaquete/2,larguraRaquete,alturaRaquete);
-            //raquete 2
-            areaDesenho.fillRect(larguraCampo-larguraRaquete,alturaCampo/2 - alturaRaquete/2,larguraRaquete,alturaRaquete);
-            //bola
-            areaDesenho.fillRect(posicaoBolaX,posicaoBolaY,larguraBola,larguraBola);
+            function executar() {
+                //código do jogo
+                //document.getElementById puxa o canvas e o getContext puxa o contexto
+                var folhaDesenho = document.getElementById("folha");
+                var areaDesenho = folhaDesenho.getContext("2d");
+
+                var larguraCampo = 600;
+                var alturaCampo = 500;
+                var larguraLinha = 5;
+                var alturaLinha = alturaCampo;
+                var larguraBola = 5;
+                var alturaRaquete = 50; // dificuldade
+                var larguraRaquete = 10;
+
+                //campo
+                areaDesenho.fillStyle = '#286047';
+                areaDesenho.fillRect(0,0,larguraCampo,alturaCampo);
+
+                //linha
+                areaDesenho.fillStyle = '#FFFFFF';
+                areaDesenho.fillRect(larguraCampo/2 - larguraLinha/2,0,larguraLinha,alturaLinha);
+                //raquete 1
+                areaDesenho.fillRect(0,alturaCampo/2 - alturaRaquete/2,larguraRaquete,alturaRaquete);
+                //raquete 2
+                areaDesenho.fillRect(larguraCampo-larguraRaquete,alturaCampo/2 - alturaRaquete/2,larguraRaquete,alturaRaquete);
+
+
+            
+
+                areaDesenho.fillRect(posicaoBolaX,posicaoBolaY,larguraBola,larguraBola);
+                posicaoBolaY = posicaoBolaY +1;
+                posicaoBolaX = posicaoBolaX +1;
+            }
+
         </script>
-
-
-
     </body>
 </html>
